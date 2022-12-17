@@ -1,0 +1,53 @@
+﻿@page "/add"
+@using BlazorPokemon.Models;
+
+<h3>Add</h3>
+
+<EditForm Model="@pokemonModel" OnValidSubmit="@HandleValidSubmit">
+    <DataAnnotationsValidator />
+    <ValidationSummary />
+
+    <p>
+        <label for="display-name">
+            Display name:
+            <InputText id="display-name" @bind-Value="pokemonModel.DisplayName" />
+        </label>
+    </p>
+    <p>
+        <label for="name">
+            Name:
+            <InputText id="name" @bind-Value="pokemonModel.Name" />
+        </label>
+    </p>
+    <p>
+        <label for="max-health">
+            Max Health Points:
+            <InputNumber id="max-health" @bind-Value="pokemonModel.HealthPoints" />
+        </label>
+    </p>
+    <p>
+        Element Type:
+        <div>
+            @foreach (var eType in elementType)
+            {
+                <label>
+                    <input type="checkbox" @onchange="@(e => OnElementTypeChange(eType, e.Value))" />@eType
+                </label>
+            }
+        </div>
+    </p>
+    <p>
+        <label>
+            Pokemon image:
+            <InputFile OnChange="@LoadImage" accept=".png" />
+        </label>
+    </p>
+    <p>
+        <label>
+            Accept Condition:
+            <InputCheckbox @bind-Value="pokemonModel.AcceptCondition" />
+        </label>
+    </p>
+
+    <button type="submit">Submit</button>
+</EditForm>

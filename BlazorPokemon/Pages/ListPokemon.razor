@@ -1,0 +1,55 @@
+﻿@page "/listpokemon"
+@using BlazorPokemon.Models
+
+
+<div class="wrapper">
+<h3>@Localizer["Title"]</h3>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+
+
+    <div>
+        <NavLink class="btn btn-primary bouton" href="Add" Match="NavLinkMatch.All">
+            <i class="fa fa-plus"></i> @Localizer["Add"]
+        </NavLink>
+    </div>
+
+    <DataGrid TItem="Pokemon"
+            Data="@pokemons"
+            ReadData="@OnReadData"
+            TotalItems="@totalPokemon"
+            PageSize="10"
+            ShowPager
+            Responsive>
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption="#" />
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption="Image">
+            <DisplayTemplate>
+                @if (File.Exists($"{WebHostEnvironment.WebRootPath}/images/{context.Name}.png"))
+                {
+                    <img src="images/@(context.Name).png" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="max-width: 150px"/>
+                }
+                else
+                {
+                    <img src="images/default.png" class="img-thumbnail" title="@context.DisplayName" alt="@context.DisplayName" style="max-width: 150px"/>
+                }
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.DisplayName)" Caption=@Localizer["Name"] />
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.HealthPoints)" Caption=@Localizer["Hp"] />
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.ElementType)" Caption=@Localizer["ElementType"] >
+            <DisplayTemplate>
+                @(string.Join(", ", ((Pokemon)context).ElementType))
+            </DisplayTemplate>
+        </DataGridColumn>
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.CreatedDate)" Caption="Created date" DisplayFormat="{0:d}" DisplayFormatProvider="@System.Globalization.CultureInfo.GetCultureInfo("fr-FR")" />
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption=@Localizer["Action"]>
+            <DisplayTemplate>
+                <a href="Edit/@(context.Id)" class="btn btn-primary"><i class="fa fa-edit"></i>@Localizer["Edit"]</a>
+                <button type="button" class="btn btn-primary" @onclick="() => OnDelete(context.Id)"><i class="fa fa-trash"></i> @Localizer["Delete"]</button>
+
+            </DisplayTemplate>
+        </DataGridColumn>
+    </DataGrid>
+</div>

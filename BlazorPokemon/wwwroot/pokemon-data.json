@@ -1,0 +1,186 @@
+[
+  {
+    "id": 1,
+    "displayname": "Overplex",
+    "name": "overplex",
+    "healtpoints": 72,
+    "elementtype": [],
+    "createddate": "2021-07-10",
+    "updateddate": null
+  },
+  {
+    "id": 2,
+    "displayname": "Goko",
+    "name": "goko",
+    "healtpoints": 61,
+    "elementtype": [
+      "rock",
+      "water"
+    ],
+    "createddate": "2022-06-28",
+    "updateddate": null
+  },
+  {
+    "id": 3,
+    "displayname": "Unisure",
+    "name": "unisure",
+    "healtpoints": 87,
+    "elementtype": [],
+    "createddate": "2021-11-26",
+    "updateddate": "2018-12-27"
+  },
+  {
+    "id": 4,
+    "displayname": "Amtas",
+    "name": "amtas",
+    "healtpoints": 55,
+    "elementtype": [],
+    "createddate": "2022-05-04",
+    "updateddate": null
+  },
+  {
+    "id": 5,
+    "displayname": "Glasstep",
+    "name": "glasstep",
+    "healtpoints": 80,
+    "elementtype": [
+      "plant"
+    ],
+    "createddate": "2015-11-29",
+    "updateddate": "2015-05-12"
+  },
+  {
+    "id": 6,
+    "displayname": "Photobin",
+    "name": "photobin",
+    "healtpoints": 94,
+    "elementtype": [
+      "wind"
+    ],
+    "createddate": "2021-10-08",
+    "updateddate": "2021-02-28"
+  },
+  {
+    "id": 7,
+    "displayname": "Waab",
+    "name": "waab",
+    "healtpoints": 53,
+    "elementtype": [
+      "fire"
+    ],
+    "createddate": "2017-08-28",
+    "updateddate": "2016-04-05"
+  },
+  {
+    "id": 8,
+    "displayname": "Isodrive",
+    "name": "isodrive",
+    "healtpoints": 66,
+    "elementtype": [
+      "rock"
+    ],
+    "createddate": "2015-12-29",
+    "updateddate": null
+  },
+  {
+    "id": 9,
+    "displayname": "Fangold",
+    "name": "fangold",
+    "healtpoints": 18,
+    "elementtype": [
+      "light",
+      "light"
+    ],
+    "createddate": "2018-06-16",
+    "updateddate": null
+  },
+  {
+    "id": 10,
+    "displayname": "Eventix",
+    "name": "eventix",
+    "healtpoints": 77,
+    "elementtype": [
+      "plant",
+      "plant"
+    ],
+    "createddate": "2019-05-29",
+    "updateddate": null
+  },
+  {
+    "id": 11,
+    "displayname": "Sloganaut",
+    "name": "sloganaut",
+    "healtpoints": 82,
+    "elementtype": [],
+    "createddate": "2014-11-11",
+    "updateddate": "2017-09-17"
+  },
+  {
+    "id": 12,
+    "displayname": "Puria",
+    "name": "puria",
+    "healtpoints": 1,
+    "elementtype": [
+      "plant",
+      "fire"
+    ],
+    "createddate": "2019-08-02",
+    "updateddate": null
+  },
+  {
+    "id": 13,
+    "displayname": "Turnabout",
+    "name": "turnabout",
+    "healtpoints": 41,
+    "elementtype": [],
+    "createddate": "2015-11-06",
+    "updateddate": "2017-11-18"
+  },
+  {
+    "id": 14,
+    "displayname": "Accuprint",
+    "name": "accuprint",
+    "healtpoints": 40,
+    "elementtype": [],
+    "createddate": "2021-01-24",
+    "updateddate": null
+  },
+  {
+    "id": 15,
+    "displayname": "Orbalix",
+    "name": "orbalix",
+    "healtpoints": 47,
+    "elementtype": [],
+    "createddate": "2017-05-21",
+    "updateddate": "2017-09-03"
+  },
+  {
+    "id": 16,
+    "displayname": "Shopabout",
+    "name": "shopabout",
+    "healtpoints": 36,
+    "elementtype": [],
+    "createddate": "2021-08-21",
+    "updateddate": null
+  },
+  {
+    "id": 17,
+    "displayname": "Stucco",
+    "name": "stucco",
+    "healtpoints": 69,
+    "elementtype": [],
+    "createddate": "2018-03-24",
+    "updateddate": "2020-01-06"
+  },
+  {
+    "id": 18,
+    "displayname": "Keeg",
+    "name": "keeg",
+    "healtpoints": 21,
+    "elementtype": [
+      "wind"
+    ],
+    "createddate": "2020-03-23",
+    "updateddate": "2022-11-23"
+  }
+]
