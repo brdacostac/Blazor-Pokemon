@@ -13,6 +13,7 @@ using Microsoft.Extensions.Options;
 
 var builder = WebApplication.CreateBuilder(args);
 
+
 // Add services to the container.
 builder.Services.AddRazorPages();
 builder.Services.AddServerSideBlazor();
@@ -20,6 +21,8 @@ builder.Services.AddSingleton<WeatherForecastService>();
 builder.Services.AddHttpClient();
 builder.Services.AddScoped<IDataService, DataLocalService>();
 builder.Services.AddBlazoredModal();
+
+
 
 // Add the controller of the app
 builder.Services.AddControllers();
@@ -44,6 +47,7 @@ builder.Services
    .AddFontAwesomeIcons();
 
 builder.Services.AddBlazoredLocalStorage();
+builder.Services.AddScoped<IDataService, DataApiService>();
 
 var app = builder.Build();
 

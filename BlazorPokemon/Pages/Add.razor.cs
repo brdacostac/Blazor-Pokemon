@@ -35,6 +35,7 @@ namespace BlazorPokemon.Pages
         [Inject]
         public IDataService DataService { get; set; }
 
+        /*
         private async void HandleValidSubmit()
         {
             // Get the current data
@@ -73,6 +74,14 @@ namespace BlazorPokemon.Pages
 
             // Save the data
             await LocalStorage.SetItemAsync("data", currentData);
+        }
+        */
+
+        private async void HandleValidSubmit()
+        {
+            await DataService.Add(pokemonModel);
+
+            NavigationManager.NavigateTo("list");
         }
 
         private async Task LoadImage(InputFileChangeEventArgs e)

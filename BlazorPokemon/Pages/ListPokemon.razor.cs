@@ -7,6 +7,7 @@ using Microsoft.Extensions.Localization;
 using BlazorPokemon.Models;
 using BlazorPokemon.Services;
 using Blazored.LocalStorage;
+using Blazorise;
 
 namespace BlazorPokemon.Pages
 {
@@ -36,7 +37,7 @@ namespace BlazorPokemon.Pages
         public NavigationManager NavigationManager { get; set; }
 
         [CascadingParameter]
-        public IModalService Modal { get; set; }
+        public Blazored.Modal.Services.IModalService Modal { get; set; }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {
@@ -63,14 +64,10 @@ namespace BlazorPokemon.Pages
                 return;
             }
 
-            // When you use a real API, we use this follow code
-            //var response = await Http.GetJsonAsync<Data[]>( $"http://my-api/api/data?page={e.Page}&pageSize={e.PageSize}" );
-            var response = (await LocalStorage.GetItemAsync<Pokemon[]>("data")).Skip((e.Page - 1) * e.PageSize).Take(e.PageSize).ToList();
-
             if (!e.CancellationToken.IsCancellationRequested)
             {
-                totalPokemon = (await LocalStorage.GetItemAsync<List<Pokemon>>("data")).Count;
-                pokemons = new List<Pokemon>(response); // an actual data for the current page
+                pokemons = await DataService.List(e.Page, e.PageSize);
+                totalPokemon = await DataService.Count();
             }
         }
         private async void OnDelete(int id)

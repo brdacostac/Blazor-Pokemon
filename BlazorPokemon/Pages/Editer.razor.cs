@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components;
 using BlazorPokemon.Models;
 using System.Numerics;
 using BlazorPokemon.Services;
-
+using BlazorPokemon.Factories;
 
 namespace BlazorPokemon.Pages
 {
@@ -43,21 +43,9 @@ namespace BlazorPokemon.Pages
 
             var fileContent = await File.ReadAllBytesAsync($"{WebHostEnvironment.WebRootPath}/images/default.png");
 
-            if (File.Exists($"{WebHostEnvironment.WebRootPath}/images/{pokemonModel.Name}.png"))
-            {
-                fileContent = await File.ReadAllBytesAsync($"{WebHostEnvironment.WebRootPath}/images/{pokemon.Name}.png");
-            }
 
             // Set the model with the pokemon
-            pokemonModel = new PokemonModel
-            {
-                Id = pokemon.Id,
-                DisplayName = pokemon.DisplayName,
-                Name = pokemon.Name,
-                HealthPoints = pokemon.HealthPoints,
-                ElementType = pokemon.ElementType,
-                ImageContent = fileContent
-            };
+            pokemonModel = PokemonFactory.ToModel(pokemon, fileContent);
         }
 
         private async void HandleValidSubmit()

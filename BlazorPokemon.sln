@@ -5,6 +5,8 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPokemon", "BlazorPokemon\BlazorPokemon.csproj", "{C04F4478-A6AD-4A61-AD00-A3534DF597BE}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minecraft.Crafting.Api", "Pokemon-Api\Minecraft.Crafting.Api.csproj", "{F5C9FC19-A915-46DF-9164-7D7F5BE72DBD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{C04F4478-A6AD-4A61-AD00-A3534DF597BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{C04F4478-A6AD-4A61-AD00-A3534DF597BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{C04F4478-A6AD-4A61-AD00-A3534DF597BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F5C9FC19-A915-46DF-9164-7D7F5BE72DBD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F5C9FC19-A915-46DF-9164-7D7F5BE72DBD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F5C9FC19-A915-46DF-9164-7D7F5BE72DBD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F5C9FC19-A915-46DF-9164-7D7F5BE72DBD}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

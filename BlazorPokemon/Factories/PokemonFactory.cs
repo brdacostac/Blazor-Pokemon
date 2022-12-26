@@ -5,7 +5,7 @@ namespace BlazorPokemon.Factories
 {
     public static class PokemonFactory
     {
-        public static PokemonModel ToModel(Pokemon pokemon) //byte[] imageContent)
+        public static PokemonModel ToModel(Pokemon pokemon, byte[] imageContent)
         {
             return new PokemonModel
             {
@@ -13,8 +13,9 @@ namespace BlazorPokemon.Factories
                 DisplayName = pokemon.DisplayName,
                 Name = pokemon.Name,
                 HealthPoints = pokemon.HealthPoints,
-                ElementType = pokemon.ElementType
-                //ImageContent = imageContent
+                ElementType = pokemon.ElementType,
+                ImageContent = pokemon.ImageContent,
+                ImageBase64 = string.IsNullOrWhiteSpace(pokemon.ImageBase64) ? Convert.ToBase64String(pokemon.ImageContent) : pokemon.ImageBase64
             };
         }
 
@@ -27,7 +28,8 @@ namespace BlazorPokemon.Factories
                 Name = model.Name,
                 HealthPoints = model.HealthPoints,
                 ElementType = model.ElementType,
-                CreatedDate = DateTime.Now
+                CreatedDate = DateTime.Now,
+                ImageBase64 = Convert.ToBase64String(model.ImageContent)
             };
         }
 
@@ -39,6 +41,7 @@ namespace BlazorPokemon.Factories
             pokemon.HealthPoints = model.HealthPoints;
             pokemon.ElementType = model.ElementType;
             pokemon.UpdatedDate = DateTime.Now;
+            pokemon.ImageBase64 = Convert.ToBase64String(model.ImageContent);
         }
     }
 }

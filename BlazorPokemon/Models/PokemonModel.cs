@@ -20,7 +20,7 @@ namespace BlazorPokemon.Models
         [Range(1, 100)]
         public int HealthPoints { get; set; }
 
-        [Required(ErrorMessage = "Le type du pokemon est obligatoire")]
+        //[Required(ErrorMessage = "Le type du pokemon est obligatoire")]
         public List<string> ElementType { get; set; }
 
         [Required]
@@ -29,6 +29,8 @@ namespace BlazorPokemon.Models
 
         [Required(ErrorMessage = "L'image du pokemon est obligatoire !")]
         public byte[] ImageContent { get; set; }
+
+        public string ImageBase64 { get; set; }
 
     }
 }

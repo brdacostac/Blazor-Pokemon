@@ -38,17 +38,10 @@
     </p>
 
     <p>
-        <label>
-            Current pokemon image:
-            @if (File.Exists($"{WebHostEnvironment.WebRootPath}/images/{pokemonModel.Name}.png"))
-            {
-                <img src="images/@(pokemonModel.Name).png" class="img-thumbnail" title="@pokemonModel.DisplayName" alt="@pokemonModel.DisplayName" style="max-width: 150px"/>
-            }
-            else
-            {
-                <img src="images/default.png" class="img-thumbnail" title="@pokemonModel.DisplayName" alt="@pokemonModel.DisplayName" style="max-width: 150px"/>
-            }
-        </label>
+    <label>
+        Current Pokemon image:
+        <img src="data:image/png;base64, @(pokemonModel.ImageBase64)" class="img-thumbnail" title="@pokemonModel.DisplayName" alt="@pokemonModel.DisplayName" style="min-width: 50px; max-width: 150px"/>
+    </label>
     </p>
     <p>
         <label>

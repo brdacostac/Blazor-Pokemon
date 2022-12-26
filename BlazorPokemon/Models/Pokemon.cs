@@ -9,5 +9,7 @@
         public List<string> ElementType { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }
+        public byte[] ImageContent { get; set; }
+        public string ImageBase64 { get; set; }
     }
 }

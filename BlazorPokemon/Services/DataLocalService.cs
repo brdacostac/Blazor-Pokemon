@@ -1,4 +1,5 @@
 ﻿using Blazored.LocalStorage;
+using BlazorPokemon.Factories;
 using BlazorPokemon.Models;
 using Microsoft.AspNetCore.Components;
 
@@ -32,15 +33,7 @@ namespace BlazorPokemon.Services
             model.Id = currentData.Max(s => s.Id) + 1;
 
             // Add the pokemon to the current data
-            currentData.Add(new Pokemon
-            {
-                Id = model.Id,
-                DisplayName = model.DisplayName,
-                Name = model.Name,
-                HealthPoints = model.HealthPoints,
-                ElementType = model.ElementType,
-                CreatedDate = DateTime.Now,
-            });
+            currentData.Add(PokemonFactory.Create(model));
 
             // Save the image
             var imagePathInfo = new DirectoryInfo($"{_webHostEnvironment.WebRootPath}/images");
@@ -102,7 +95,7 @@ namespace BlazorPokemon.Services
             // Get the pokemon int the list
             var pokemon = currentData.FirstOrDefault(w => w.Id == id);
 
-            // Check if item exist
+            // Check if pokemon exist
             if (pokemon == null)
             {
                 throw new Exception($"Unable to found the pokemon with ID: {id}");
@@ -116,16 +109,16 @@ namespace BlazorPokemon.Services
             // Get the current data
             var currentData = await _localStorage.GetItemAsync<List<Pokemon>>("data");
 
-            // Get the item int the list
+            // Get the pokemon int the list
             var pokemon = currentData.FirstOrDefault(w => w.Id == id);
 
-            // Check if item exist
+            // Check if pokemon exist
             if (pokemon == null)
             {
                 throw new Exception($"Unable to found the pokemon with ID: {id}");
             }
 
-            // Save the image
+             // Save the image
             var imagePathInfo = new DirectoryInfo($"{_webHostEnvironment.WebRootPath}/images");
 
             // Check if the folder "images" exist
@@ -151,12 +144,8 @@ namespace BlazorPokemon.Services
             // Write the file content
             await File.WriteAllBytesAsync(fileName.FullName, model.ImageContent);
 
-            // Modify the content of the item
-            pokemon.DisplayName = model.DisplayName;
-            pokemon.Name = model.Name;
-            pokemon.HealthPoints = model.HealthPoints;
-            pokemon.ElementType = model.ElementType;
-            pokemon.UpdatedDate = DateTime.Now;
+            // Modify the content of the pokemon
+            PokemonFactory.Update(pokemon, model);
 
 
             // Save the data
