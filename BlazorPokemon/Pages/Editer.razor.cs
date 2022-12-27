@@ -52,7 +52,7 @@ namespace BlazorPokemon.Pages
         {
             await DataService.Update(Id, pokemonModel);
 
-            NavigationManager.NavigateTo("ListPokemon");
+            NavigationManager.NavigateTo("list");
         }
 
         private async Task LoadImage(InputFileChangeEventArgs e)

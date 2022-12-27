@@ -294,6 +294,7 @@ namespace Minecraft.Crafting.Api.Controllers
             pokemonOriginal.DisplayName = pokemon.DisplayName;
             pokemonOriginal.ElementType = pokemon.ElementType;
             pokemonOriginal.UpdatedDate = pokemon.UpdatedDate;
+            pokemonOriginal.ImageBase64 = pokemon.ImageBase64;
 
             System.IO.File.WriteAllText("Data/pokemons.json", JsonSerializer.Serialize(data, _jsonSerializerOptions));
 

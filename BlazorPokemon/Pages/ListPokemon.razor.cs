@@ -86,7 +86,7 @@ namespace BlazorPokemon.Pages
             await DataService.Delete(id);
 
             // Reload the page
-            NavigationManager.NavigateTo("listpokemon", true);
+            NavigationManager.NavigateTo("list", true);
         }
 
     }
