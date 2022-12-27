@@ -27,7 +27,7 @@ namespace BlazorPokemon.Models
         [Range(typeof(bool), "true", "true", ErrorMessage = "Vous devez accepter les conditions.")]
         public bool AcceptCondition { get; set; }
 
-        [Required(ErrorMessage = "L'image du pokemon est obligatoire !")]
+        //[Required(ErrorMessage = "L'image du pokemon est obligatoire !")]
         public byte[] ImageContent { get; set; }
 
         public string ImageBase64 { get; set; }

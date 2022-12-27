@@ -26,7 +26,7 @@ namespace BlazorPokemon.Pages
             ElementType = new List<string>(),
         };
 
-       
+
 
         [Inject]
         public IDataService DataService { get; set; }
@@ -83,6 +83,6 @@ namespace BlazorPokemon.Pages
             }
         }
 
-        
+
     }
 }
