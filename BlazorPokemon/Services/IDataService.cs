@@ -16,5 +16,7 @@ namespace BlazorPokemon.Services
 
         Task Delete(int id);
 
+        Task<List<Pokemon>> All();
+
     }
 }

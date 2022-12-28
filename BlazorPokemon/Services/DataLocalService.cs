@@ -175,6 +175,11 @@ namespace BlazorPokemon.Services
             // Save the data
             await _localStorage.SetItemAsync("data", currentData);
         }
+
+        public Task<List<Pokemon>> All()
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

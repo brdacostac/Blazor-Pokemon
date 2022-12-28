@@ -1,5 +1,6 @@
 ﻿using BlazorPokemon.Factories;
 using BlazorPokemon.Models;
+using Microsoft.AspNetCore.Components;
 
 namespace BlazorPokemon.Services
 {
@@ -7,7 +8,7 @@ namespace BlazorPokemon.Services
     {
     private readonly HttpClient _http;
 
-    public DataApiService(
+        public DataApiService(
         HttpClient http)
     {
         _http = http;
@@ -49,6 +50,12 @@ namespace BlazorPokemon.Services
     {
         await _http.DeleteAsync($"https://localhost:7234/api/Crafting/{id}");
     }
+
+        public async Task<List<Pokemon>> All()
+        {
+            return await _http.GetFromJsonAsync<List<Pokemon>>($"https://localhost:7234/api/Crafting/all");
+        }
+
 
 }
 }

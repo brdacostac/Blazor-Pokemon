@@ -11,5 +11,11 @@
         public DateTime? UpdatedDate { get; set; }
         public byte[] ImageContent { get; set; }
         public string ImageBase64 { get; set; }
+
+        public static int compareType(Pokemon p1, Pokemon p2)
+        {
+            //if (p1.ElementType[0]=="Elektrik" && p2) { }
+            return 0;
+        }
     }
 }
