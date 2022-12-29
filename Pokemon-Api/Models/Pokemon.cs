@@ -12,6 +12,8 @@
         public string DisplayName { get; set; }
         public string Name { get; set; }
         public int HealthPoints { get; set; }
+        public int PointsAttack { get; set; }
+        public int PointsDefense { get; set; }
         public List<string> ElementType { get; set; }
         public DateTime CreatedDate { get; set; }
         public DateTime? UpdatedDate { get; set; }

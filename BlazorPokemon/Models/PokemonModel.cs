@@ -17,17 +17,25 @@ namespace BlazorPokemon.Models
         public string Name { get; set; }
 
         [Required]
-        [Range(1, 100)]
+        [Range(0, 100)]
         public int HealthPoints { get; set; }
 
-        //[Required(ErrorMessage = "Le type du pokemon est obligatoire")]
+        [Required]
+        [Range(10, 100)]
+        public int PointsAttack { get; set; }
+
+        [Required]
+        [Range(10, 100)]
+        public int PointsDefense { get; set; }
+
+        [Required(ErrorMessage = "Le type du pokemon est obligatoire")]
         public List<string> ElementType { get; set; }
 
         [Required]
         [Range(typeof(bool), "true", "true", ErrorMessage = "Vous devez accepter les conditions.")]
         public bool AcceptCondition { get; set; }
 
-        //[Required(ErrorMessage = "L'image du pokemon est obligatoire !")]
+        [Required(ErrorMessage = "L'image du pokemon est obligatoire !")]
         public byte[] ImageContent { get; set; }
 
         public string ImageBase64 { get; set; }

@@ -21,7 +21,7 @@ namespace BlazorPokemon.Pages
         /// <summary>
         /// The default type categories.
         /// </summary>
-        private List<string> elementType = new List<string>() { "Dragon ", "Eau ", "Electrik ", "Feu ", "Glace ", "Plante ", "Psy ", "Ténèbres " };
+        private List<string> elementType = new List<string>() { "Dragon", "Eau", "Electrik", "Feu", "Glace", "Plante", "Psy", "Ténèbres" };
 
 
         /// <summary>
@@ -35,47 +35,6 @@ namespace BlazorPokemon.Pages
         [Inject]
         public IDataService DataService { get; set; }
 
-        /*
-        private async void HandleValidSubmit()
-        {
-            // Get the current data
-            var currentData = await LocalStorage.GetItemAsync<List<Pokemon>>("data");
-
-            NavigationManager.NavigateTo("listpokemon");
-
-            // Simulate the Id
-            pokemonModel.Id = currentData.Max(s => s.Id) + 1;
-
-            // Add the pokemon to the current data
-            currentData.Add(new Pokemon
-            {
-                Id = pokemonModel.Id,
-                DisplayName = pokemonModel.DisplayName,
-                Name = pokemonModel.Name,
-                HealthPoints = pokemonModel.HealthPoints,
-                ElementType = pokemonModel.ElementType,
-                CreatedDate = DateTime.Now
-            });
-
-            // Save the image
-            var imagePathInfo = new DirectoryInfo($"{WebHostEnvironment.WebRootPath}/images");
-
-            // Check if the folder "images" exist
-            if (!imagePathInfo.Exists)
-            {
-                imagePathInfo.Create();
-            }
-
-            // Determine the image name
-            var fileName = new FileInfo($"{imagePathInfo}/{pokemonModel.Name}.png");
-
-            // Write the file content
-            await File.WriteAllBytesAsync(fileName.FullName, pokemonModel.ImageContent);
-
-            // Save the data
-            await LocalStorage.SetItemAsync("data", currentData);
-        }
-        */
 
         private async void HandleValidSubmit()
         {

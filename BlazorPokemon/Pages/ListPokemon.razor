@@ -38,6 +38,8 @@
         </DataGridColumn>
         <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.DisplayName)" Caption=@Localizer["Name"] />
         <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.HealthPoints)" Caption=@Localizer["Hp"] />
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.PointsAttack)" Caption=@Localizer["PointsAttack"] />
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.PointsDefense)" Caption=@Localizer["PointsDefense"] />
         <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.ElementType)" Caption=@Localizer["ElementType"] >
             <DisplayTemplate>
                 @(string.Join(", ", ((Pokemon)context).ElementType))

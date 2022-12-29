@@ -26,6 +26,18 @@
         </label>
     </p>
     <p>
+        <label for="PointsAttack">
+            PointsAttack:
+            <InputNumber id="PointsAttack" @bind-Value="pokemonModel.PointsAttack" />
+        </label>
+    </p>
+    <p>
+        <label for="PointsDefense">
+            PointsDefense:
+            <InputNumber id="max-health" @bind-Value="pokemonModel.PointsDefense" />
+        </label>
+    </p>
+    <p>
         Element Type:
         <div>
             @foreach (var eType in elementType)

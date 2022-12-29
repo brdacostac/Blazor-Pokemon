@@ -62,7 +62,6 @@ namespace BlazorPokemon.Components
             {
                 return;
             }
-            
 
         }
 
