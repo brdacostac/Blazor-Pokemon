@@ -8,6 +8,7 @@ using BlazorPokemon.Models;
 using BlazorPokemon.Services;
 using Blazored.LocalStorage;
 using Blazorise;
+using System.Runtime.Serialization;
 
 namespace BlazorPokemon.Pages
 {
@@ -38,6 +39,13 @@ namespace BlazorPokemon.Pages
 
         [CascadingParameter]
         public Blazored.Modal.Services.IModalService Modal { get; set; }
+
+        protected override async Task OnInitializedAsync()
+        {
+            int size = await DataService.Count();
+            pokemons = await DataService.List(0, size);
+
+        }
 
         protected override async Task OnAfterRenderAsync(bool firstRender)
         {

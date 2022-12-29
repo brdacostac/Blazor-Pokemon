@@ -63,13 +63,15 @@ namespace BlazorPokemon.Components
             {
                 int winner = Pokemon.compareType(RecipeItems[0], RecipeItems[1]);
                 RecipeResult = RecipeItems[winner];
-                
+
+
                 if (RecipeItems[1 - winner].HealthPoints <= 0)
                 {
                     RecipeItems[1 - winner] = null;
                     refPokemon[1 - winner].Pokemon = null;
                     RecipeResult = null;
                 }
+                
             }
             else
             {

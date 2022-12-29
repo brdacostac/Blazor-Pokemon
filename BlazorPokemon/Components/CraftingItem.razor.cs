@@ -44,17 +44,19 @@ namespace BlazorPokemon.Components
             {
                 return;
             }
-            if (Parent.CurrentDragItem.HealthPoints > 0)
+            if (Parent.CurrentDragItem.HealthPoints > 0 )
             {
-                this.Pokemon = Parent.CurrentDragItem;
+                if (Parent.CurrentDragItem == Parent.RecipeItems[(1-this.Index)])
+                    return;
 
+                this.Pokemon = Parent.CurrentDragItem;
+               
                 Parent.RecipeItems[this.Index] = this.Pokemon;
 
                 Parent.Actions.Add(new CraftingAction { Action = "Drop", Pokemon = this.Pokemon, Index = this.Index });
+                
                 Parent.CheckRecipe();
             }
-                
-            
 
         }
 
