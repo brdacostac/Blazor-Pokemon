@@ -11,6 +11,10 @@ namespace BlazorPokemon.Components
     {
         private Pokemon _recipeResult;
 
+        private List<CraftingItem> refPokemon = new List<CraftingItem> { new (), new() };
+
+
+
         [Inject]
         public IDataService DataService { get; set; }
 
@@ -54,9 +58,18 @@ namespace BlazorPokemon.Components
         public void CheckRecipe()
         {
             RecipeResult = null;
+
             if (RecipeItems[0]!=null && RecipeItems[1] != null)
             {
-                RecipeResult = RecipeItems[Pokemon.compareType(RecipeItems[0], RecipeItems[1])];
+                int winner = Pokemon.compareType(RecipeItems[0], RecipeItems[1]);
+                RecipeResult = RecipeItems[winner];
+                
+                if (RecipeItems[1 - winner].HealthPoints <= 0)
+                {
+                    RecipeItems[1 - winner] = null;
+                    refPokemon[1 - winner].Pokemon = null;
+                    RecipeResult = null;
+                }
             }
             else
             {

@@ -23,7 +23,6 @@
                     p2.HealthPoints = p2.HealthPoints - (int)(p1.PointsAttack*0.5);
                     return 0;
                 }
-                    return 0;
                 p2.HealthPoints = p2.HealthPoints + p2.PointsDefense - p1.PointsAttack;
                 return 0;
             }
