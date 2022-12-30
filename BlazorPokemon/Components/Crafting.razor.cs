@@ -1,6 +1,7 @@
 ﻿using BlazorPokemon.Models;
 using BlazorPokemon.Services;
 using Microsoft.AspNetCore.Components;
+using Microsoft.Extensions.Localization;
 using Microsoft.JSInterop;
 using System.Collections.ObjectModel;
 using System.Collections.Specialized;
@@ -9,11 +10,14 @@ namespace BlazorPokemon.Components
 {
     public partial class Crafting
     {
+        [Inject]
+        public IStringLocalizer<Crafting> Localizer { get; set; }
+
         private Pokemon _recipeResult;
 
         private List<CraftingItem> refPokemon = new List<CraftingItem> { new (), new() };
 
-
+        
 
         [Inject]
         public IDataService DataService { get; set; }

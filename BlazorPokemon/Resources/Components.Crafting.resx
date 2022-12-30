@@ -117,13 +117,13 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
-  <data name="CallToAction" xml:space="preserve">
-    <value>Discover</value>
+  <data name="Bataille" xml:space="preserve">
+    <value>Battle :</value>
   </data>
-  <data name="Description" xml:space="preserve">
-    <value>Check out our Pokemon blog. A multitude of Pokemons are at your disposal. Have fun adding, removing, you have the choice !</value>
+  <data name="Gagnant" xml:space="preserve">
+    <value>Winner :</value>
   </data>
-  <data name="MainTitle" xml:space="preserve">
-    <value>Let's go Pikachu !</value>
+  <data name="Pokemons" xml:space="preserve">
+    <value>Pokemon available :</value>
   </data>
 </root>

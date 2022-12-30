@@ -1,10 +1,12 @@
 ﻿@page "/bataille"
+@using System.Globalization
+
 <CascadingValue Value="@this">
     <div class="container">
         <div class="row">
             <div class="col-6">
 
-                <div><h2>Pokemons disponibles : </h2></div>
+                <div><h2> @Localizer["Pokemons"] </h2></div>
                 <div>
                     <div class="css-grid">
                         @if(Pokemons != null){
@@ -19,7 +21,7 @@
             </div>
 
             <div class="col-6">
-                <div><h2>Bataille :</h2></div>
+                <div><h2>@Localizer["Bataille"]</h2></div>
 
                 <div>
                     <div class="css-recipe">
@@ -28,7 +30,7 @@
                         <CraftingItem @ref="refPokemon[1]" Index="1" />
                     </div>
                 </div>
-                <div class="gagnant"> <h2>Gagnant :</h2></div>
+                <div class="gagnant"> <h2>@Localizer["Gagnant"]</h2></div>
                 <div class="resultat">
                     <CraftingItem Pokemon="RecipeResult" />
                 </div>
@@ -157,4 +159,21 @@
       font-size: 12px;
     }
 
+    .wrapHp{
+        display:flex;
+        justify-content: space-between
+    }
+
+    .wrapHp button{
+        cursor: pointer;
+        width: 60px;
+        background-color: white !important;
+        text-align: center;
+        margin: 5px;
+        margin-top: 5px !important;
+        padding: 5px 3px;
+        border-radius: 10px;
+        font-weight: 400;
+    }
+    
 </style>

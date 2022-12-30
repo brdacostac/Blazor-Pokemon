@@ -45,7 +45,7 @@
                 @(string.Join(", ", ((Pokemon)context).ElementType))
             </DisplayTemplate>
         </DataGridColumn>
-        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.CreatedDate)" Caption="Created date" DisplayFormat="{0:d}" DisplayFormatProvider="@System.Globalization.CultureInfo.GetCultureInfo("fr-FR")" Filterable="false"/>
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.CreatedDate)" Caption=@Localizer["Date"] DisplayFormat="{0:d}" DisplayFormatProvider="@System.Globalization.CultureInfo.GetCultureInfo("fr-FR")" Filterable="false"/>
         <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption=@Localizer["Action"] Filterable="false">
             <DisplayTemplate>
                 <a href="Edit/@(context.Id)" class="btn btn-primary"><i class="fa fa-edit"></i>@Localizer["Edit"]</a>
