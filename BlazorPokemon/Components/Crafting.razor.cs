@@ -55,13 +55,14 @@ namespace BlazorPokemon.Components
         internal IJSRuntime JavaScriptRuntime { get; set; }
 
 
-        public void CheckRecipe()
+        public async void CheckRecipe()
         {
             RecipeResult = null;
 
             if (RecipeItems[0]!=null && RecipeItems[1] != null)
             {
                 int winner = Pokemon.compareType(RecipeItems[0], RecipeItems[1]);
+                await DataService.UpdateLoser(RecipeItems[1-winner].Id, RecipeItems[1-winner]);
                 RecipeResult = RecipeItems[winner];
 
 
@@ -79,6 +80,7 @@ namespace BlazorPokemon.Components
             }
 
         }
+
 
         protected override async Task OnInitializedAsync()
         {

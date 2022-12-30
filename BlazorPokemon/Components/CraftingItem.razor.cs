@@ -18,6 +18,7 @@ namespace BlazorPokemon.Components
         [CascadingParameter]
         public Crafting Parent { get; set; }
 
+
         internal void OnDragEnter()
         {
             if (NoDrop)

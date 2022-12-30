@@ -46,7 +46,13 @@ namespace BlazorPokemon.Services
         await _http.PutAsJsonAsync($"https://localhost:7234/api/Crafting/{id}", pokemon);
     }
 
-    public async Task Delete(int id)
+    public async Task UpdateLoser(int id, Pokemon pokemon)
+    {
+
+        await _http.PutAsJsonAsync($"https://localhost:7234/api/Crafting/{id}", pokemon);
+    }
+
+        public async Task Delete(int id)
     {
         await _http.DeleteAsync($"https://localhost:7234/api/Crafting/{id}");
     }

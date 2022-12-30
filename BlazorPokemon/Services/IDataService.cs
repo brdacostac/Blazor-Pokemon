@@ -14,6 +14,8 @@ namespace BlazorPokemon.Services
 
         Task Update(int id, PokemonModel model);
 
+        Task UpdateLoser(int id, Pokemon pokemon);
+
         Task Delete(int id);
 
         Task<List<Pokemon>> All();

@@ -180,6 +180,11 @@ namespace BlazorPokemon.Services
         {
             throw new NotImplementedException();
         }
+
+        public Task UpdateLoser(int id, Pokemon pokemon)
+        {
+            throw new NotImplementedException();
+        }
     }
 
 

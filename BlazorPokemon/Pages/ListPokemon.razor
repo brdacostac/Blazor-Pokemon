@@ -23,8 +23,8 @@
             FilterMethod="DataGridFilterMethod.StartsWith"
             ShowPager
             Responsive>
-        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption="#" FilterCellStyle="display : none" />
-        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption="Image" FilterCellStyle="display : none">
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption="Id" Filterable="false"/>
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption="Image" Filterable="false">
             <DisplayTemplate>
                 @if (!string.IsNullOrWhiteSpace(context.ImageBase64))
                 {
@@ -37,16 +37,16 @@
             </DisplayTemplate>
         </DataGridColumn>
         <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.DisplayName)" Caption=@Localizer["Name"] />
-        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.HealthPoints)" Caption=@Localizer["Hp"] FilterCellStyle="display : none" />
-        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.PointsAttack)" Caption=@Localizer["PointsAttack"] FilterCellStyle="display : none" />
-        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.PointsDefense)" Caption=@Localizer["PointsDefense"] FilterCellStyle="display : none" />
-        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.ElementType)" Caption=@Localizer["ElementType"] FilterCellStyle="display : none">
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.HealthPoints)" Caption=@Localizer["Hp"] Filterable="false" />
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.PointsAttack)" Caption=@Localizer["PointsAttack"] Filterable="false" />
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.PointsDefense)" Caption=@Localizer["PointsDefense"] Filterable="false" />
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.ElementType)" Caption=@Localizer["ElementType"] Filterable="false">
             <DisplayTemplate>
                 @(string.Join(", ", ((Pokemon)context).ElementType))
             </DisplayTemplate>
         </DataGridColumn>
-        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.CreatedDate)" Caption="Created date" DisplayFormat="{0:d}" DisplayFormatProvider="@System.Globalization.CultureInfo.GetCultureInfo("fr-FR")" />
-        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption=@Localizer["Action"]>
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.CreatedDate)" Caption="Created date" DisplayFormat="{0:d}" DisplayFormatProvider="@System.Globalization.CultureInfo.GetCultureInfo("fr-FR")" Filterable="false"/>
+        <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption=@Localizer["Action"] Filterable="false">
             <DisplayTemplate>
                 <a href="Edit/@(context.Id)" class="btn btn-primary"><i class="fa fa-edit"></i>@Localizer["Edit"]</a>
                 <button type="button" class="btn btn-primary" @onclick="() => OnDelete(context.Id)"><i class="fa fa-trash"></i> @Localizer["Delete"]</button>
