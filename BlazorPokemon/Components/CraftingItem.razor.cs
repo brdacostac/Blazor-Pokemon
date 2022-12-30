@@ -1,6 +1,8 @@
 ﻿using Blazorise;
 using BlazorPokemon.Models;
+using BlazorPokemon.Services;
 using Microsoft.AspNetCore.Components;
+using System.Reflection;
 
 namespace BlazorPokemon.Components
 {
@@ -8,6 +10,9 @@ namespace BlazorPokemon.Components
     {
         [Parameter]
         public int Index { get; set; }
+
+        [Inject]
+        public IDataService DataService { get; set; }
 
         [Parameter]
         public Pokemon Pokemon { get; set; }
@@ -61,6 +66,11 @@ namespace BlazorPokemon.Components
 
         }
 
+        private async void HealPokemon()
+        {
+            this.Pokemon.HealthPoints = 100;
+            await DataService.UpdateLoser(this.Pokemon.Id, this.Pokemon);
+        }
         private void OnDragStart()
         {
             Parent.CurrentDragItem = this.Pokemon;
