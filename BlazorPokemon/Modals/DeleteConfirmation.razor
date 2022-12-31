@@ -1,12 +1,12 @@
 ﻿<div class="simple-form">
     
     <p>
-        Are you sure you want to delete @pokemon.DisplayName ?
+        @Localizer["Confirmation"] @pokemon.DisplayName ?
     </p>
 
-    <button @onclick="ConfirmDelete" class="btn btn-primary">Delete</button>
+    <button @onclick="ConfirmDelete" class="btn btn-primary">@Localizer["Delete"]</button>
 
-    <button @onclick="Cancel" class="btn btn-secondary">Cancel</button>
+    <button @onclick="Cancel" class="btn btn-secondary">@Localizer["Cancel"]</button>
 </div>
 
 @code {

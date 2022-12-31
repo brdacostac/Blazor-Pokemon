@@ -3,11 +3,15 @@ using Microsoft.AspNetCore.Components;
 using BlazorPokemon.Models;
 using Blazored.Modal.Services;
 using Blazored.Modal;
+using Microsoft.Extensions.Localization;
 
 namespace BlazorPokemon.Modals
 {
     public partial class DeleteConfirmation
     {
+        [Inject]
+        public IStringLocalizer<DeleteConfirmation> Localizer { get; set; }
+
         [CascadingParameter]
         public BlazoredModalInstance ModalInstance { get; set; }
 

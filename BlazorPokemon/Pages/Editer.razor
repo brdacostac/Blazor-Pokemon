@@ -1,6 +1,6 @@
 ﻿@page "/edit/{Id:int}"
 
-<h3>Edit</h3>
+<h3>@Localizer["Edit"]</h3>
 
 <EditForm Model="@pokemonModel" OnValidSubmit="@HandleValidSubmit">
     <DataAnnotationsValidator />
@@ -8,37 +8,37 @@
 
     <p>
         <label for="display-name">
-            Display name:
+            @Localizer["DisplayName"]
             <InputText id="display-name" @bind-Value="pokemonModel.DisplayName" />
         </label>
     </p>
     <p>
         <label for="name">
-            Name:
+            @Localizer["Name"]
             <InputText id="name" @bind-Value="pokemonModel.Name" />
         </label>
     </p>
 
      <p>
         <label for="max-health">
-            Max Health Points:
+            @Localizer["MaxHealthPoints"]
             <InputNumber id="max-health" @bind-Value="pokemonModel.HealthPoints" />
         </label>
     </p>
     <p>
         <label for="PointsAttack">
-            PointsAttack:
+            @Localizer["PointsAttack"]
             <InputNumber id="PointsAttack" @bind-Value="pokemonModel.PointsAttack" />
         </label>
     </p>
     <p>
         <label for="PointsDefense">
-            PointsDefense:
+            @Localizer["PointsDefense"]
             <InputNumber id="max-health" @bind-Value="pokemonModel.PointsDefense" />
         </label>
     </p>
     <p>
-        Element Type:
+        @Localizer["ElementType"]
         <div>
             @foreach (var eType in ElementType)
             {
@@ -51,22 +51,22 @@
 
     <p>
     <label>
-        Current Pokemon image:
+        @Localizer["CurrentImage"]
         <img src="data:image/png;base64, @(pokemonModel.ImageBase64)" class="img-thumbnail" title="@pokemonModel.DisplayName" alt="@pokemonModel.DisplayName" style="min-width: 50px; max-width: 150px"/>
     </label>
     </p>
     <p>
         <label>
-            Pokemon image:
+            @Localizer["PokemonImage"]
             <InputFile OnChange="@LoadImage" accept=".png" />
         </label>
     </p>
     <p>
         <label>
-            Accept Condition:
+            @Localizer["Condition"]
             <InputCheckbox @bind-Value="pokemonModel.AcceptCondition" />
         </label>
     </p>
 
-    <button type="submit">Submit</button>
+    <button type="submit">@Localizer["Submit"]</button>
 </EditForm>
