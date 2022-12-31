@@ -1,4 +1,4 @@
-﻿namespace Minecraft.Crafting.Api.Models
+﻿namespace Pokemon.Api.Models
 {
 
     public class Pokemon

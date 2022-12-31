@@ -20,22 +20,22 @@ namespace BlazorPokemon.Services
         var pokemon = PokemonFactory.Create(model);
         
         // Save the data
-        await _http.PostAsJsonAsync("https://localhost:7234/api/Crafting/", pokemon);
+        await _http.PostAsJsonAsync("https://localhost:7234/api/Pokemon/", pokemon);
     }
 
     public async Task<int> Count()
     {
-        return await _http.GetFromJsonAsync<int>("https://localhost:7234/api/Crafting/count");
+        return await _http.GetFromJsonAsync<int>("https://localhost:7234/api/Pokemon/count");
     }
 
     public async Task<List<Pokemon>> List(int currentPage, int pageSize)
     {
-        return await _http.GetFromJsonAsync<List<Pokemon>>($"https://localhost:7234/api/Crafting/?currentPage={currentPage}&pageSize={pageSize}");
+        return await _http.GetFromJsonAsync<List<Pokemon>>($"https://localhost:7234/api/Pokemon/?currentPage={currentPage}&pageSize={pageSize}");
     }
     
     public async Task<Pokemon> GetById(int id)
     {
-        return await _http.GetFromJsonAsync<Pokemon>($"https://localhost:7234/api/Crafting/{id}");
+        return await _http.GetFromJsonAsync<Pokemon>($"https://localhost:7234/api/Pokemon/{id}");
     }
 
     public async Task Update(int id, PokemonModel model)
@@ -43,23 +43,23 @@ namespace BlazorPokemon.Services
         // Get the Pokemon
         var pokemon = PokemonFactory.Create(model);
         
-        await _http.PutAsJsonAsync($"https://localhost:7234/api/Crafting/{id}", pokemon);
+        await _http.PutAsJsonAsync($"https://localhost:7234/api/Pokemon/{id}", pokemon);
     }
 
     public async Task UpdateLoser(int id, Pokemon pokemon)
     {
 
-        await _http.PutAsJsonAsync($"https://localhost:7234/api/Crafting/{id}", pokemon);
+        await _http.PutAsJsonAsync($"https://localhost:7234/api/Pokemon/{id}", pokemon);
     }
 
         public async Task Delete(int id)
     {
-        await _http.DeleteAsync($"https://localhost:7234/api/Crafting/{id}");
+        await _http.DeleteAsync($"https://localhost:7234/api/Pokemon/{id}");
     }
 
         public async Task<List<Pokemon>> All()
         {
-            return await _http.GetFromJsonAsync<List<Pokemon>>($"https://localhost:7234/api/Crafting/all");
+            return await _http.GetFromJsonAsync<List<Pokemon>>($"https://localhost:7234/api/Pokemon/all");
         }
 
 

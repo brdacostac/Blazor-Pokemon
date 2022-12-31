@@ -5,7 +5,7 @@ VisualStudioVersion = 17.2.32526.322
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "BlazorPokemon", "BlazorPokemon\BlazorPokemon.csproj", "{C04F4478-A6AD-4A61-AD00-A3534DF597BE}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Minecraft.Crafting.Api", "Pokemon-Api\Minecraft.Crafting.Api.csproj", "{F5C9FC19-A915-46DF-9164-7D7F5BE72DBD}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pokemon.Api", "Pokemon-Api\Pokemon.Api.csproj", "{F5C9FC19-A915-46DF-9164-7D7F5BE72DBD}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
