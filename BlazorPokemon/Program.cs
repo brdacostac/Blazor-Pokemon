@@ -10,9 +10,11 @@ using Blazored.Modal;
 using Microsoft.AspNetCore.Localization;
 using System.Globalization;
 using Microsoft.Extensions.Options;
+using Microsoft.Extensions.Logging;
 
 var builder = WebApplication.CreateBuilder(args);
 
+builder.Logging.AddConfiguration(builder.Configuration.GetSection("Logging"));
 
 // Add services to the container.
 builder.Services.AddRazorPages();

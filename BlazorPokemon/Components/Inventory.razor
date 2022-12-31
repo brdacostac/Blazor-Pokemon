@@ -1,0 +1,55 @@
+﻿@page "/inventory"
+@using System.Globalization
+@using BlazorPokemon.Models
+
+
+<CascadingValue Value="@this">
+    <div class="container">
+        <div class="row">
+            <div class="col-6">
+                <button @onclick="SortByame" class="btn btn-secondary">
+                    @Localizer["Sort"]
+                </button>
+                <DataGrid TItem="Pokemon"
+                                  Data="@Pokemons"
+                                  PageSize="6"
+                                  Filterable
+                                  FilterMethod="DataGridFilterMethod.StartsWith"
+                                  ShowPager
+                                  Sortable='true'
+                                  ShowCaptions='false'
+                                  Responsive>
+                    <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption="" Filterable=false/>
+                    <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.Id)" Caption="" Filterable=false>
+                                <DisplayTemplate>
+                                    <InventoryItem Pokemon="@context" NoDrop="true"/>
+                                </DisplayTemplate>
+                            </DataGridColumn>
+                    <DataGridColumn TItem="Pokemon" Field="@nameof(Pokemon.DisplayName)" Caption="Display name" Filterable />
+
+                </DataGrid>
+            </div>
+
+            <div class="col-6">
+                <div><h2>Equipe</h2></div>
+
+                <div>
+                    <div class="css-recipe">
+                        <InventoryItem Index="0" Pokemon="@this.RecipeItems[0]" />
+                        <InventoryItem Index="1" Pokemon="@this.RecipeItems[1]" />
+                        <InventoryItem Index="2" Pokemon="@this.RecipeItems[2]" />
+                        <InventoryItem Index="3" Pokemon="@this.RecipeItems[3]" />
+                        <InventoryItem Index="4" Pokemon="@this.RecipeItems[4]" />
+                        <InventoryItem Index="5" Pokemon="@this.RecipeItems[5]"/>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-12">
+                <div>Actions</div>
+                <div class="actions" id="actions">
+                </div>
+            </div>
+        </div>
+    </div>
+</CascadingValue>

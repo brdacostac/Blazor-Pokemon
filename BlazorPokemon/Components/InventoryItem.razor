@@ -1,0 +1,31 @@
+﻿
+<div class="pokemon"
+     ondragover="event.preventDefault();"
+     draggable="true"
+     @ondragstart="@OnDragStart"
+     @ondrop="@OnDrop"
+     @ondragenter="@OnDragEnter"
+     @ondragleave="@OnDragLeave"
+     @ondragend="@OnDragEnd">
+
+    @if (Pokemon != null)
+    {
+        @if (!string.IsNullOrWhiteSpace(Pokemon.ImageBase64))
+        {
+            <div class="container2">
+                <div>
+                    <img src="data:image/png;base64, @(Pokemon.ImageBase64)" class="img-thumbnail" title="@Pokemon.DisplayName" alt="@Pokemon.DisplayName" />
+
+                </div>
+            </div>
+        }
+        else
+        {
+            <img src="images/default.png" class="img-thumbnail" title="@Pokemon.DisplayName" alt="@Pokemon.DisplayName" style="width: 50px; height: 50px" />
+        }
+
+    }
+</div>
+
+
+

@@ -20,7 +20,6 @@ namespace BlazorPokemon.Pages
 
         private List<Pokemon> pokemons;
 
-        private int totalPokemon;
 
         [Inject]
         public HttpClient Http { get; set; }
@@ -65,19 +64,6 @@ namespace BlazorPokemon.Pages
             }
         }
 
-        private async Task OnReadData(DataGridReadDataEventArgs<Pokemon> e)
-        {
-            if (e.CancellationToken.IsCancellationRequested)
-            {
-                return;
-            }
-
-            if (!e.CancellationToken.IsCancellationRequested)
-            {
-                pokemons = await DataService.List(e.Page, e.PageSize);
-                totalPokemon = await DataService.Count();
-            }
-        }
         private async void OnDelete(int id)
         {
             var parameters = new ModalParameters();

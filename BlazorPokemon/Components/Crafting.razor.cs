@@ -22,13 +22,6 @@ namespace BlazorPokemon.Components
         [Inject]
         public IDataService DataService { get; set; }
 
-        public Crafting()
-        {
-            Actions = new ObservableCollection<CraftingAction>();
-            Actions.CollectionChanged += OnActionsCollectionChanged;
-            this.RecipeItems = new List<Pokemon> { null, null };
-        }
-
         public ObservableCollection<CraftingAction> Actions { get; set; }
         public Pokemon CurrentDragItem { get; set; }
 
@@ -36,6 +29,13 @@ namespace BlazorPokemon.Components
         public List<Pokemon> Pokemons { get; set; }
 
         public List<Pokemon> RecipeItems { get; set; }
+
+        public Crafting()
+        {
+            Actions = new ObservableCollection<CraftingAction>();
+            Actions.CollectionChanged += OnActionsCollectionChanged;
+            this.RecipeItems = new List<Pokemon> { null, null };
+        }
 
         public Pokemon RecipeResult
         {
