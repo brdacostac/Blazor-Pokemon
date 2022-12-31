@@ -129,7 +129,7 @@
   <data name="Logs" xml:space="preserve">
     <value>Logs</value>
   </data>
-  <data name="Pokemon" xml:space="preserve">
-    <value>Pokemon</value>
+  <data name="Pokemons" xml:space="preserve">
+    <value>Pokemons</value>
   </data>
 </root>
