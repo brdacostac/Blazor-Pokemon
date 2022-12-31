@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components;
 using BlazorPokemon.Models;
 using System.Numerics;
+using Microsoft.Extensions.Localization;
 using BlazorPokemon.Services;
 using BlazorPokemon.Factories;
 
@@ -10,6 +11,9 @@ namespace BlazorPokemon.Pages
 {
     public partial class Editer
     {
+        [Inject]
+        public IStringLocalizer<Editer> Localizer { get; set; }
+
         [Parameter]
         public int Id { get; set; }
 

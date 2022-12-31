@@ -1,10 +1,14 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.Extensions.Logging;
+using Microsoft.Extensions.Localization;
 
 namespace BlazorPokemon.Pages
 {
     public partial class CreateLog
     {
+        [Inject]
+        public IStringLocalizer<CreateLog> Localizer { get; set; }
+
         [Inject]
         public ILogger<CreateLog> Logger { get; set; }
 

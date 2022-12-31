@@ -4,11 +4,15 @@ using Microsoft.AspNetCore.Components;
 using BlazorPokemon.Models;
 using System.Numerics;
 using BlazorPokemon.Services;
+using Microsoft.Extensions.Localization;
 
 namespace BlazorPokemon.Pages
 {
     public partial class Add
     {
+        [Inject]
+        public IStringLocalizer<Editer> Localizer { get; set; }
+
         [Inject]
         public NavigationManager NavigationManager { get; set; }
 
