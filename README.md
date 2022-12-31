@@ -24,6 +24,6 @@ Ensuite, on va définir les projets de démarrage :
 
     5. On démarre le projet global
     
-![Boutton de démarrage](/Images/demmarrage3.png "Titre de l'image")
+![Boutton de démarrage](/Images/demarrage3.png "Titre de l'image")
 
-Auteurs : Othmane Benjelloun et Bruno Da Costa Cunha
+Auteurs : Bruno Da Costa Cunha et Othmane Benjelloun
