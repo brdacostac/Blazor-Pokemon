@@ -1,6 +1,6 @@
 # Projet de création d'un inventaire en Blazor
 
-Ce projet avait pour but de créer un inventaire Pokemon à l'aide du framework Blazor et ce afin de nous faire découvrir ce dernier.
+Ce projet avait pour but de créer un site Pokemon à l'aide du framework Blazor et ce afin de nous faire découvrir ce dernier.
 
 ## Lancement du projet
 
