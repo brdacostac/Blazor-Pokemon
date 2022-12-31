@@ -1,4 +1,4 @@
-﻿namespace Minecraft.Crafting.Api
+﻿namespace Pokemon.Api
 {
     using Newtonsoft.Json;
     using Newtonsoft.Json.Converters;
